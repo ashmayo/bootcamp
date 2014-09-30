@@ -1,0 +1,42 @@
+#average
+
+###Get User to Input Numbers
+nums = Array.new
+while true
+	puts "Enter a numer or done to quit."
+	temp = gets.chomp.downcase
+	if temp == 'done'
+		break
+	else 
+		nums.push(temp.to_f)
+	end
+end
+
+### Sort & Count array elements
+
+nums = nums.sort
+count = nums.length
+
+if count % 2 == 0
+	temp = (count + 1)
+	low_c = temp.floor
+	high_c = temp.ceil 
+	median = (nums[low_c] + nums[high_c])/2
+else 
+	center = (count/2.).to_f.ceil
+	median = nums[temp]
+end
+
+puts "The median for array #{nums} is #{median}"
+
+
+###
+
+# So for 5
+# Divide by 2
+# You get 2.5
+# Round up to 3rd element
+
+# If 6
+#Divide by 2 
+# You get 3
